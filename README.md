@@ -16,14 +16,7 @@ $ chmod +x ./auto_setup.sh
 $ ./auto_setup
 ```
 
-### Start and open React Template App
-
-#### Start Node server
-  ```bash
-  $ npm start
-  ```
-
-#### React Skeleton Manual Setup:
+### React Skeleton Manual Setup:
   ```bash
   $ git clone https://github.com/dankreiger/instant-react-skeleton.git
   $ cd instant-react-skeleton/
@@ -44,7 +37,9 @@ $ ./auto_setup
 
 
 
-### Start Node server
+## Start and open React Template App
+
+#### Start Node server
   ```bash
   $ npm start
   ```
