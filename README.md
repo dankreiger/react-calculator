@@ -5,25 +5,25 @@ This skeleton is based off of [Mark Price's Udemy Tutorial](https://www.udemy.co
 ### Quickstart
 - Run this from the command line:
   ```bash
-      $ chmod +x ./auto_setup.sh
-      $ ./auto_setup
+  $ chmod +x ./auto_setup.sh
+  $ ./auto_setup
   ```
 
 ### React Skeleton Manual Setup:
 - Run this from the command line:
   ```bash
-      $ npm init
-      $ npm install -g browserify
-      $ npm install --save react
-      $ npm install --save react-dom
-      $ npm install --save babelify
-      $ npm install --save watchify
-      $ npm install --save $ babel-preset-react
-      $ mkdir -p src/components
-      $ mkdir -p public/js
-      $ touch public/index.html
-      $ touch src/main.jsx
-      $ touch public/js/main.js
+  $ npm init
+  $ npm install -g browserify
+  $ npm install --save react
+  $ npm install --save react-dom
+  $ npm install --save babelify
+  $ npm install --save watchify
+  $ npm install --save $ babel-preset-react
+  $ mkdir -p src/components
+  $ mkdir -p public/js
+  $ touch public/index.html
+  $ touch src/main.jsx
+  $ touch public/js/main.js
   ```
 
 
