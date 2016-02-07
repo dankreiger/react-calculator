@@ -1,15 +1,26 @@
-## React Skeleton Quickstart
+## ReactJS Starter Application Template
 This skeleton is based off of [Mark Price's Udemy Tutorial](https://www.udemy.com/react-flux/learn)
-- Running the following scripts will set you up with a ReactJS starter application template.
+
+### Prerequisite (NodeJS):
+- Check to see if <a href="https://nodejs.org/">NodeJS</a> is installed:
+```bash
+$ node --version
+```
 
 ### Quickstart
+- Clone this repository and run the setup script:
 ```bash
+$ git clone https://github.com/dankreiger/instant-react-skeleton.git
+$ cd instant-react-skeleton/
 $ chmod +x ./auto_setup.sh
 $ ./auto_setup
 ```
 
+
 ### React Skeleton Manual Setup:
   ```bash
+  $ git clone https://github.com/dankreiger/instant-react-skeleton.git
+  $ cd instant-react-skeleton/  
   $ npm init
   $ npm install -g browserify
   $ npm install --save react
