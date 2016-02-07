@@ -35,13 +35,13 @@ touch public/js/main.js
 <h4>Inside of <code>package.json</code>:</h4>
 
 <h6>Change:</h6>
-```json
+```javascript
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
 ```
 <h6> to:</h6>
-```json
+```javascript
   "scripts": {
     "start": "watchify src/main.jsx -v -t [babelify --presets [ react ] ] -o public/js/main.js"
   },
