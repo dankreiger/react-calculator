@@ -1,11 +1,16 @@
 ## ReactJS Starter Application Template
 This skeleton is based off of [Mark Price's Udemy Tutorial](https://www.udemy.com/react-flux/learn)
 
-### Prerequisite (NodeJS):
+
+
+##### Prerequisite (NodeJS):
 - Check to see if <a href="https://nodejs.org/">NodeJS</a> is installed:
 ```bash
 $ node --version
 ```
+
+
+
 
 ### Quickstart
 - Clone this repository and run the setup script:
