@@ -33,7 +33,20 @@ touch public/index.html
 touch src/main.jsx
 touch public/js/main.js
 
-
+cat > public/index.html << EOF
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CommonJS React Skeleton</title>
+  </head>
+  <body>
+    <div id="ingredients">
+    </div>
+  <script src="js/main.js"></script>
+  </body>
+</html>
+EOF
 
 
 cat > src/main.jsx << EOF
