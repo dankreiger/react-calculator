@@ -27,7 +27,7 @@ $ ./auto_setup.sh
   $ npm start
   ```
 
-#### Open index page
+#### Open the index page in a new tab/window
   ```bash
   $ open public/index.html
   ```
