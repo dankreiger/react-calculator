@@ -30,17 +30,17 @@ This skeleton is based off of [Mark Price's Udemy Tutorial](https://www.udemy.co
 (npm server will not start without the following change):
 - Inside of <code>package.json</code>:
 Change:
-  ```javascript
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-  ```
+```javascript
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+```
 to:
-  ```javascript
-      "scripts": {
-      "start": "watchify src/main.jsx -v -t [babelify --presets [ react ] ] -o public/js/main.js"
-    },
-  ```
+```javascript
+    "scripts": {
+    "start": "watchify src/main.jsx -v -t [babelify --presets [ react ] ] -o public/js/main.js"
+  },
+```
 
 ### Start node server
 - Run from the command line
