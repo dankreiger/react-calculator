@@ -10,9 +10,7 @@ $ node --version
 ```
 
 
-
-
-### Easy Setup
+### Quickstart
 - Clone this repository and run the setup script:
 ```bash
 $ git clone https://github.com/dankreiger/instant-react-skeleton.git
@@ -32,29 +30,6 @@ $ ./auto_setup.sh
   ```bash
   open public/index.html
   ```
-
-
-
-### Manual Setup:
-  ```bash
-  $ git clone https://github.com/dankreiger/instant-react-skeleton.git
-  $ cd instant-react-skeleton/
-  $ printf ".gitignore\n.DS_Store\nnode_modules\n*.log" >> .gitignore
-  $ npm init
-  $ npm install -g browserify
-  $ npm install --save react
-  $ npm install --save react-dom
-  $ npm install --save babelify
-  $ npm install --save watchify
-  $ npm install --save $ babel-preset-react
-  $ mkdir -p src/components
-  $ mkdir -p public/js
-  $ touch public/index.html
-  $ touch src/main.jsx
-  $ touch public/js/main.js
-  ```
-
-### Then start the node server and open the index page
 
 
 
