@@ -3,16 +3,18 @@
 
 cat > README.md << EOF
 
-# React Skeleton Quickstart
+<h2>React Skeleton Quickstart</h2>
 
-### Run this from the command line
+<h5>Run this from the command line:</h5>
 <pre><code>
 chmod +x ./auto_setup.sh
 ./auto_setup
 </code></pre>
 
+<hr>
 
-# React Skeleton Manual Setup
+<hr>
+<h3>React Skeleton Manual Setup</h3>
 <pre><code>
 npm init
 npm install -g browserify
@@ -29,20 +31,24 @@ touch src/main.jsx
 touch public/js/main.js
 </code></pre>
 
-## Important (npm server will not start unless this change is made):
-### in <code>package.json</code> change:
+<h2>Important (npm server will not start unless this change is made):</h2>
+<h4>Inside of <code>package.json</code>:</h4>
 
+<h6>Change:</h6>
+<pre><code>
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-### to:
-  "scripts": {
+</code></pre>
+<h6> to:</h6>
+<pre><code>
+    "scripts": {
     "start": "watchify src/main.jsx -v -t [babelify --presets [ react ] ] -o public/js/main.js"
   },
+</code></pre>
+<h3> run </h3><br> <code>npm start</code>
 
-### run <code>npm start</code>
-
-### create <code>.gitignore</code>
+<h3> create <code>.gitignore</code></h3>
 <pre>
 <code>
 cat > .gitignore << GITIGNORE
@@ -53,6 +59,6 @@ GITIGNORE
 </pre>
 
 
-For the detailed lecture this skeleton is based off of, check out [Mark Price's Udemy Tutorial](https://www.udemy.com/react-flux/learn)
+This skeleton is based off of [Mark Price's Udemy Tutorial](https://www.udemy.com/react-flux/learn)
 
 EOF
