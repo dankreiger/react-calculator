@@ -12,16 +12,30 @@ $ node --version
 
 
 
-### Quickstart
+### Easy Setup
 - Clone this repository and run the setup script:
 ```bash
 $ git clone https://github.com/dankreiger/instant-react-skeleton.git
 $ cd instant-react-skeleton/
 $ chmod +x ./auto_setup.sh
-$ ./auto_setup
+$ ./auto_setup.sh
 ```
 
-### React Skeleton Manual Setup:
+## Start and open React Template App
+
+#### Start Node server
+  ```bash
+  $ npm start
+  ```
+
+#### Open index page
+  ```bash
+  open public/index.html
+  ```
+
+
+
+### Manual Setup:
   ```bash
   $ git clone https://github.com/dankreiger/instant-react-skeleton.git
   $ cd instant-react-skeleton/
@@ -40,15 +54,8 @@ $ ./auto_setup
   $ touch public/js/main.js
   ```
 
+### Then start the node server and open the index page
 
-## Start and open React Template App
 
-#### Start Node server
-  ```bash
-  $ npm start
-  ```
 
-#### Open index page
-  ```bash
-  open public/index.html
-  ```
+
