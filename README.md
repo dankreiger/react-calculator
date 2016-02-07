@@ -3,11 +3,14 @@ This skeleton is based off of [Mark Price's Udemy Tutorial](https://www.udemy.co
 
 
 
-##### Prerequisite (NodeJS):
-- Check to see if <a href="https://nodejs.org/">NodeJS</a> is installed:
-```bash
-$ node --version
-```
+
+- Please make sure <a href="https://nodejs.org/">NodeJS</a> is installed first.
+
+  - Check via the command line:
+  ```bash
+  $ node --version
+  ```
+
 
 
 ### Quickstart
@@ -19,8 +22,6 @@ $ chmod +x ./auto_setup.sh
 $ ./auto_setup.sh
 ```
 
-## Start and open React Template App
-
 #### Start Node server
   ```bash
   $ npm start
@@ -28,7 +29,7 @@ $ ./auto_setup.sh
 
 #### Open index page
   ```bash
-  open public/index.html
+  $ open public/index.html
   ```
 
 
