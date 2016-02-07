@@ -1,38 +1,24 @@
 #!/bin/bash
-RED='\033[0;31m'
 GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-PURPLE='\033[0;35m'
-CYAN='\033[0;36m'
 NC='\033[0m' # No Color
-
 git init
-
 cat > .gitignore << EOF
 .gitignore
 node_modules
+*.log
 EOF
-
-
-FILL_IN=$(printf "\n\n \xF0\x9F\x90\xB6 ${GREEN}Fill in app info:${NC}")
-
+FILL_IN=$(printf "\n\n \xF0\x9F\x90\xB6 ${GREEN}Fill in app info (or just press enter for each line):${NC}")
 echo $FILL_IN
-
 npm init
-npm install -g browserify
-
+npmglobals=('browserify' 'json')
 npmmodules=('react' 'react-dom' 'babelify' 'watchify' 'babel-preset-react')
-
-
-for i in "${npmmodules[@]}";do npm install --save $i; done
-
-
+for i in "${npmglobals[@]}";do npm install -g $i; done
+for j in "${npmmodules[@]}";do npm install --save $j; done
 mkdir -p src/components
 mkdir -p public/js
 touch public/index.html
 touch src/main.jsx
 touch public/js/main.js
-
 cat > public/index.html << EOF
 <!DOCTYPE html>
 <html>
@@ -47,17 +33,12 @@ cat > public/index.html << EOF
   </body>
 </html>
 EOF
-
-
 cat > src/main.jsx << EOF
 var React = require('react');
 var ReactDom = require('react-dom');
 var List = require('./components/List.jsx');
 ReactDom.render(<List />, document.getElementById('ingredients'));
 EOF
-
-
-
 cat > src/components/List.jsx << EOF
 var React = require('react');
 var ListItem = require('./ListItem.jsx');
@@ -72,8 +53,6 @@ var List = React.createClass({
 });
 module.exports = List;
 EOF
-
-
 cat > src/components/ListItem.jsx << EOF
 var React = require('react');
 var ListItem = React.createClass({
@@ -85,6 +64,9 @@ var ListItem = React.createClass({
     );
   }
 });
-
 module.exports = ListItem;
 EOF
+
+json -I -f package.json -e 'this.scripts={
+    "start": "watchify src/main.jsx -v -t [babelify --presets [ react ] ] -o public/js/main.js"
+  }'
