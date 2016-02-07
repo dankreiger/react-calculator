@@ -35,17 +35,17 @@ touch public/js/main.js
 <h4>Inside of <code>package.json</code>:</h4>
 
 <h6>Change:</h6>
-<pre><code>
+```javascript
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-</code></pre>
+```
 <h6> to:</h6>
-<pre><code>
-    "scripts": {
+```javascript
+  "scripts": {
     "start": "watchify src/main.jsx -v -t [babelify --presets [ react ] ] -o public/js/main.js"
   },
-</code></pre>
+```
 <h3> run </h3><br> <code>npm start</code>
 
 <h3> create <code>.gitignore</code></h3>
