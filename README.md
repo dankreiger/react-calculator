@@ -26,7 +26,7 @@ $ ./auto_setup
 
 
 
-### Update npm script
+### Update start script
 ###### the server will not start without the following change:
 - Inside of <code>package.json</code>:
   - Change:
@@ -37,8 +37,9 @@ $ ./auto_setup
   ```
   - to:
   ```javascript
-      "scripts": {
+    "scripts": {
       "start": "watchify src/main.jsx -v -t [babelify --presets [ react ] ] -o public/js/main.js"
+      "test": "echo \"Error: no test specified\" && exit 1"      
     },
   ```
 
