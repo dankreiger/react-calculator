@@ -16,11 +16,18 @@ $ chmod +x ./auto_setup.sh
 $ ./auto_setup
 ```
 
+### Start and open React Template App
 
-### React Skeleton Manual Setup:
+#### Start Node server
+  ```bash
+  $ npm start
+  ```
+
+#### React Skeleton Manual Setup:
   ```bash
   $ git clone https://github.com/dankreiger/instant-react-skeleton.git
-  $ cd instant-react-skeleton/  
+  $ cd instant-react-skeleton/
+  $ printf ".gitignore\n.DS_Store\nnode_modules\n*.log" >> .gitignore
   $ npm init
   $ npm install -g browserify
   $ npm install --save react
@@ -37,34 +44,12 @@ $ ./auto_setup
 
 
 
-### Update start script
-###### the server will not start without the following change:
-- Inside of <code>package.json</code>:
-  - Change:
-  ```javascript
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-  ```
-  - to:
-  ```javascript
-    "scripts": {
-      "start": "watchify src/main.jsx -v -t [babelify --presets [ react ] ] -o public/js/main.js",
-      "test": "echo \"Error: no test specified\" && exit 1"      
-    },
-  ```
-
-
-#### Start node server
+### Start Node server
   ```bash
-  npm start
+  $ npm start
   ```
 
-#### Create <code>.gitignore</code>
+#### Open index page
   ```bash
-  cat > .gitignore << GITIGNORE
-  .gitignore
-  node_modules
-  npm-debug.log
-  GITIGNORE
+  open public/index.html
   ```

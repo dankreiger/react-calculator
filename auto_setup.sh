@@ -1,9 +1,9 @@
 #!/bin/bash
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
-git init
 cat > .gitignore << EOF
 .gitignore
+.DS_Store
 node_modules
 *.log
 EOF
