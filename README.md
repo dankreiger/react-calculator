@@ -26,6 +26,8 @@ This skeleton is based off of [Mark Price's Udemy Tutorial](https://www.udemy.co
       $ touch public/js/main.js
   ```
 
+
+
 ### Important
 (npm server will not start without the following change):
 - Inside of <code>package.json</code>:
@@ -42,13 +44,15 @@ to:
   },
 ```
 
-### Start node server
+
+#### Start node server
 - Run from the command line
   ```bash
     npm start
   ```
 
-### Create <code>.gitignore</code> (run from command line)
+#### Create <code>.gitignore</code>
+(run from command line)
   ```bash
   cat > .gitignore << GITIGNORE
   .gitignore
