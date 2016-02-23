@@ -6,7 +6,7 @@
 
   - Check via the command line:
   ```bash
-  $ node --version
+    $ node --version
   ```
 
 #### Clone the repository
