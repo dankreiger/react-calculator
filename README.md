@@ -1,5 +1,7 @@
 ## ReactJS Calculator
 
+###### In progress...
+
 #### Clone the repository
   ```bash
   git clone https://github.com/dankreiger/react-calculator.git
