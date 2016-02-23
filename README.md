@@ -24,8 +24,8 @@
   ```bash
     $ NPMGLOBALS=('browserify' 'json')
     $ NPMMODULES=('react' 'react-dom' 'babelify' 'watchify' 'babel-preset-react')
-    for i in "${NPMGLOBALS[@]}";do npm install -g $i; done
-    for j in "${NPMMODULES[@]}";do npm install --save $j; done
+    $ for i in "${NPMGLOBALS[@]}";do npm install -g $i; done
+    $ for j in "${NPMMODULES[@]}";do npm install --save $j; done
   ```
 
 
