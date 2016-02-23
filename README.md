@@ -2,6 +2,27 @@
 
 ###### In progress...
 
+- Please make sure <a href="https://nodejs.org/">NodeJS</a> is installed first.
+
+  - Check via the command line:
+  ```bash
+  $ node --version
+  ```
+
+
+#### Write a new package.json file
+  ```bash
+    npm init
+  ```
+
+#### Install NPM packages
+  ```bash
+    NPMGLOBALS=('browserify' 'json')
+    NPMMODULES=('react' 'react-dom' 'babelify' 'watchify' 'babel-preset-react')
+    for i in "${NPMGLOBALS[@]}";do npm install -g $i; done
+    for j in "${NPMMODULES[@]}";do npm install --save $j; done
+  ```
+
 #### Clone the repository
   ```bash
   git clone https://github.com/dankreiger/react-calculator.git
