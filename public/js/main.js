@@ -19032,37 +19032,65 @@ module.exports = require('./lib/React');
 
 },{"./lib/React":53}],159:[function(require,module,exports){
 var React = require('react');
-
-var Add = React.createClass({
-  displayName: "Add",
-
-
-  render: function () {
-    return React.createElement(
-      "div",
-      { className: "col-sm-8 col-sm-offset-4" },
-      React.createElement(
-        "button",
-        { type: "submit", className: "btn btn-primary" },
-        "Add"
-      )
-    );
-  }
-});
-
-module.exports = Add;
-
-},{"react":158}],160:[function(require,module,exports){
-var React = require('react');
 var FirstNumber = require('./FirstNumber.jsx');
 var SecondNumber = require('./SecondNumber.jsx');
-var Add = require('./Add.jsx');
+var Result = require('./Result.jsx');
 
 var Calculator = React.createClass({
   displayName: 'Calculator',
 
+  getInitialState: function () {
+    return { value: "0" };
+  },
 
-  render: function () {
+  add: function () {
+    if (!this.refs.firstNumber.state.value) {
+      this.setState({ value: eval(parseFloat(this.refs.secondNumber.state.value)) });
+    } else if (!this.refs.secondNumber.state.value) {
+      this.setState({ value: eval(parseFloat(this.refs.firstNumber.state.value)) });
+    } else if (!this.refs.firstNumber.state.value && !this.refs.secondNumber.state.value) {
+      this.setState({ value: "0" });
+    } else {
+      this.setState({ value: eval(parseFloat(this.refs.firstNumber.state.value) + parseFloat(this.refs.secondNumber.state.value)) });
+    }
+  },
+  subtract: function () {
+    if (!this.refs.firstNumber.state.value) {
+      this.setState({ value: "0" });
+    } else if (!this.refs.secondNumber.state.value) {
+      this.setState({ value: eval(parseFloat(this.refs.firstNumber.state.value)) });
+    } else if (!this.refs.firstNumber.state.value && !this.refs.secondNumber.state.value) {
+      this.setState({ value: "0" });
+    } else {
+      this.setState({ value: eval(parseFloat(this.refs.firstNumber.state.value) - parseFloat(this.refs.secondNumber.state.value)) });
+    }
+  },
+  multiply: function () {
+    if (!this.refs.firstNumber.state.value || !this.refs.secondNumber.state.value) {
+      this.setState({ value: "0" });
+    } else if (!this.refs.firstNumber.state.value && !this.refs.secondNumber.state.value) {
+      this.setState({ value: "0" });
+    } else {
+      this.setState({ value: eval(parseFloat(this.refs.firstNumber.state.value) * parseFloat(this.refs.secondNumber.state.value)) });
+    }
+  },
+  divide: function () {
+    if (!this.refs.firstNumber.state.value || !this.refs.secondNumber.state.value) {
+      this.setState({ value: "0" });
+    } else if (!this.refs.firstNumber.state.value && !this.refs.secondNumber.state.value) {
+      this.setState({ value: "0" });
+    } else {
+      this.setState({ value: eval(parseFloat(this.refs.firstNumber.state.value) / parseFloat(this.refs.secondNumber.state.value)) });
+    }
+  },
+  clear: function () {
+    this.setState({ value: "0" });
+  },
+
+  render: function (e) {
+    var btnStyle = {
+      width: 200
+    };
     return React.createElement(
       'div',
       { className: 'panel panel-default' },
@@ -19072,13 +19100,58 @@ var Calculator = React.createClass({
         React.createElement(
           'div',
           { className: 'row' },
+          React.createElement(Result, { value: this.state.value })
+        ),
+        React.createElement('br', null),
+        React.createElement(
+          'div',
+          { className: 'row' },
           React.createElement(
             'div',
-            { className: 'col-sm-6 col-sm-offset-3' },
+            { className: 'col-sm-3' },
             React.createElement(
-              'h1',
-              { className: 'text-center' },
-              'Calculator'
+              'button',
+              { type: 'submit',
+                className: 'btn btn-primary',
+                onClick: this.add,
+                style: btnStyle },
+              '+'
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'col-sm-3' },
+            React.createElement(
+              'button',
+              { type: 'submit',
+                className: 'btn btn-primary',
+                onClick: this.subtract,
+                style: btnStyle },
+              '-'
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'col-sm-3' },
+            React.createElement(
+              'button',
+              { type: 'submit',
+                className: 'btn btn-primary',
+                onClick: this.multiply,
+                style: btnStyle },
+              'x'
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'col-sm-3' },
+            React.createElement(
+              'button',
+              { type: 'submit',
+                className: 'btn btn-primary',
+                onClick: this.divide,
+                style: btnStyle },
+              '/'
             )
           )
         ),
@@ -19088,15 +19161,22 @@ var Calculator = React.createClass({
           React.createElement(
             'div',
             { className: 'form-group' },
-            React.createElement(FirstNumber, null),
-            React.createElement(SecondNumber, null)
+            React.createElement(FirstNumber, { ref: 'firstNumber' }),
+            React.createElement(SecondNumber, { ref: 'secondNumber' }),
+            React.createElement(
+              'div',
+              { className: 'col-sm-3 col-sm-offset-3' },
+              React.createElement(
+                'button',
+                { type: 'submit',
+                  id: 'clearButton',
+                  className: 'btn btn-danger',
+                  onClick: this.clear,
+                  style: btnStyle },
+                'Clear'
+              )
+            )
           )
-        ),
-        React.createElement('br', null),
-        React.createElement(
-          'div',
-          { className: 'row' },
-          React.createElement(Add, null)
         )
       )
     );
@@ -19105,22 +19185,53 @@ var Calculator = React.createClass({
 
 module.exports = Calculator;
 
-},{"./Add.jsx":159,"./FirstNumber.jsx":161,"./SecondNumber.jsx":162,"react":158}],161:[function(require,module,exports){
+},{"./FirstNumber.jsx":160,"./Result.jsx":161,"./SecondNumber.jsx":162,"react":158}],160:[function(require,module,exports){
 var React = require('react');
 
 var FirstNumber = React.createClass({
   displayName: "FirstNumber",
 
+  getInitialState: function () {
+    return { value: "" };
+  },
+  onChange: function (e) {
+    this.setState({ value: e.target.value });
+  },
+  clear: function () {
+    this.setState({ value: "0" });
+  },
   render: function () {
     return React.createElement(
       "div",
-      { className: "col-sm-6" },
-      React.createElement("input", { type: "text", className: "form-control", placeholder: "Enter Number" })
+      { className: "col-sm-3" },
+      React.createElement("input", {
+        type: "number",
+        id: "firstOperand",
+        onChange: this.onChange,
+        className: "form-control",
+        placeholder: "1st Operand" })
     );
   }
 });
 
 module.exports = FirstNumber;
+
+},{"react":158}],161:[function(require,module,exports){
+var React = require('react');
+
+var Result = React.createClass({
+  displayName: "Result",
+
+  render: function () {
+    return React.createElement(
+      "div",
+      { className: "col-sm-12" },
+      React.createElement("input", { type: "number", className: "form-control", value: this.props.value, readOnly: true })
+    );
+  }
+});
+
+module.exports = Result;
 
 },{"react":158}],162:[function(require,module,exports){
 var React = require('react');
@@ -19128,11 +19239,25 @@ var React = require('react');
 var SecondNumber = React.createClass({
   displayName: "SecondNumber",
 
+  getInitialState: function () {
+    return { value: "" };
+  },
+  onChange: function (e) {
+    this.setState({ value: e.target.value });
+  },
+  clear: function () {
+    this.setState({ value: "0" });
+  },
   render: function () {
     return React.createElement(
       "div",
-      { className: "col-sm-6" },
-      React.createElement("input", { type: "text", className: "form-control", placeholder: "Enter Number" })
+      { className: "col-sm-3" },
+      React.createElement("input", {
+        type: "number",
+        id: "secondOperand",
+        onChange: this.onChange,
+        className: "form-control",
+        placeholder: "2nd Operand" })
     );
   }
 });
@@ -19145,4 +19270,4 @@ var ReactDom = require('react-dom');
 var Calculator = require('./components/Calculator.jsx');
 ReactDom.render(React.createElement(Calculator, null), document.getElementById('calculator'));
 
-},{"./components/Calculator.jsx":160,"react":158,"react-dom":29}]},{},[163]);
+},{"./components/Calculator.jsx":159,"react":158,"react-dom":29}]},{},[163]);
